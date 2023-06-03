@@ -26,16 +26,17 @@
                 <div class="col-md-6">
                     <div class="login-form">
                         <h3 class="text-center mb-4 mt-1">Login</h3>
-                        <form>
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <input type="email" id="form2Example1" class="form-control" />
+                                <input type="email" id="form2Example1" name="email" class="form-control" />
                                 <label class="form-label" for="form2Example1">Email address</label>
                             </div>
 
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" id="form2Example2" class="form-control" />
+                                <input type="password" id="form2Example2" name="password" class="form-control" />
                                 <label class="form-label" for="form2Example2">Password</label>
                             </div>
 

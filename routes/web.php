@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('user.landingPage');
 // });
 
 // Route::get('/dashboard', function () {
@@ -31,12 +31,18 @@ use Illuminate\Support\Facades\Route;
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboardAdmin');
+})->middleware('admin')->name('admin.dashboard');
+
+require __DIR__.'/adminauth.php';
 
 // admin
-Route::get('/dashboard', function(){
-    return view('admin.dashboard');
-});
+// Route::get('/dashboardAdmin', function(){
+//     return view('admin.dashboardAdmin');
+// });
 
 Route::get('/product_admin', [productController::class, 'index']);
 Route::post('/product_admin/insert', [productController::class, 'store']);
@@ -47,3 +53,5 @@ Route::get('/product_admin/delete/{id}', [productController::class, 'delete']);
 // user
 Route::get('/', [landingPageController::class, 'index']);
 Route::get('/product', [productUserController::class, 'index']);
+Route::get('/detail-product/{id}', [productUserController::class, 'detail']);
+Route::get('/cart', [productUserController::class, 'cart']);

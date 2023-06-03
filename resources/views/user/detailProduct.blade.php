@@ -7,7 +7,7 @@
         </p>
         <div class="row">
             <div class="col-md-4 text-center">
-                <img src="./images/simple3.jpg" class="img-detail" alt="">
+                <img src="{{ asset('storage/images/' .$data->foto) }}" class="img-detail" alt="">
             </div>
             <div class="col-md-4">
                 <div class="deskripsi">
@@ -31,21 +31,21 @@
             <div class="col-md-4">
                 <div class="form-beli">
                     <p>ALLOUT apparel</p>
-                    <h4>Mr. Simple T-shirt</h4>
-                    <p>Rp. 80.000</p>
+                    <h4>{{ $data->nama }} T-shirt</h4>
+                    <p>Rp. {{ number_format($data->harga) }}</p>
                     <p>Ukuran</p>
                     <div class="btn-group mb-3">
                         <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" />
                         <label class="btn btn-secondary" for="option1">S</label>
 
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" />
-                        <label class="btn btn-secondary" for="option1">M</label>
-
                         <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
-                        <label class="btn btn-secondary" for="option2">L</label>
+                        <label class="btn btn-secondary" for="option2">M</label>
 
                         <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" />
-                        <label class="btn btn-secondary" for="option3">XL</label>
+                        <label class="btn btn-secondary" for="option3">L</label>
+
+                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" />
+                        <label class="btn btn-secondary" for="option4">XL</label>
                     </div>
                     <p>Jumlah</p>
                     <div class="form-outline">
@@ -61,4 +61,8 @@
             </div>
         </div>
     </div>
+
+    <script>
+        
+    </script>
 @endsection

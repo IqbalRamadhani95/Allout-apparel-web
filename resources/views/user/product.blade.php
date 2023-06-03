@@ -15,7 +15,7 @@
                             </p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="/detail-product">
+                            <a href="/detail-product/{{ $item->id }}">
                                 <button class="badge button1">
                                     Check Detail
                                 </button>

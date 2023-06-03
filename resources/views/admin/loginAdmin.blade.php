@@ -25,13 +25,9 @@
                 </div>
                 <div class="col-md-6">
                     <div class="login-form">
-                        <h3 class="text-center mb-4 mt-1">Register</h3>
-                        <form method="POST" action="{{ route('register') }}">
+                        <h3 class="text-center mb-4 mt-1">Login Admin</h3>
+                        <form method="POST" action="{{ route('admin.login') }}">
                             @csrf
-                            <div class="form-outline mb-4">
-                                <input type="text" id="form2Example1" name="name" class="form-control" />
-                                <label class="form-label" for="form2Example1">Nama</label>
-                            </div>
                             <!-- Email input -->
                             <div class="form-outline mb-4">
                                 <input type="email" id="form2Example1" name="email" class="form-control" />
@@ -44,14 +40,22 @@
                                 <label class="form-label" for="form2Example2">Password</label>
                             </div>
 
-                            <div class="form-outline mb-4">
-                                <input type="password" id="form2Example2" name="password_confirmation"
-                                    class="form-control" />
-                                <label class="form-label" for="form2Example2">Konfirmasi Password</label>
+                            <!-- 2 column grid layout for inline styling -->
+                            <div class="row mb-4">
+
+                                <div class="col">
+                                    <!-- Simple link -->
+                                    <a href="#!">Forgot password?</a>
+                                </div>
                             </div>
 
                             <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+                            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                            <!-- Register buttons -->
+                            <div class="text-center">
+                                <p>Not a member? <a href="/admin/register">Register</a></p>
+                            </div>
                         </form>
                     </div>
                 </div>
